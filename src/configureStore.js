@@ -7,6 +7,8 @@ import {
 import thunk from 'redux-thunk';
 import persistState from 'redux-localstorage';
 
+import { reducer as todoAppReducer } from './TodoApp/redux';
+
 function configureStore() {
   const reducer = createReducer();
 
@@ -14,7 +16,7 @@ function configureStore() {
     reducer,
     compose(
       applyMiddleware(thunk),
-      persistState([]),
+      persistState(['todo']),
       window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (arg => arg),
     ),
   );
@@ -24,6 +26,7 @@ function configureStore() {
 
 function createReducer() {
   return combineReducers({
+    todo: todoAppReducer,
   });
 }
 

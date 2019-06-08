@@ -1,6 +1,26 @@
+@import 'vars.scss';
+
 .todo-app {
+  padding: 0.3rem 0.5rem;
+
   &__title {
-    color: #122a31;
     font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    padding: 0.4rem 0.7rem;
+    background: $blue;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
